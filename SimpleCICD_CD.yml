@@ -38,7 +38,7 @@ stages:
           # Optional: Uncomment to deploy to Azure App Service
           # - task: AzureWebApp@1
           #   inputs:
-          #     azureSubscription: 'SimpleCICDAzureConnection'  # Your Azure service connection
+          #     azureSubscription: 'SimpleCICDAzureConnection'  # Your Azure service connectionnn
           #     appType: 'webApp'
           #     appName: 'SimpleCICDApp'  # Your App Service name
           #     package: '$(Pipeline.Workspace)/drop'
