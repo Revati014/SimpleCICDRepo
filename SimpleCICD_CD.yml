@@ -5,7 +5,7 @@ pr: none
 resources:
   pipelines:
     - pipeline: ciPipelineAlias
-      source: SimpleCICD_CI  # Must match the CI pipeline name
+      source: SimpleCICD_CI  # Must match the CI pipeline namee
       trigger:
         branches:
           include:
