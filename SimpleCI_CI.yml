@@ -36,6 +36,8 @@ steps:
     inputs:
       targetPath: '$(Pipeline.Workspace)/s'
       artifact: 'drop'
+
+#cbdsibweviub
       publishLocation: 'pipeline'
     displayName: 'Publish Artifact'
 #bcjkdsvbhjebcjdcbghfbgfbfsd
