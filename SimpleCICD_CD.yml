@@ -10,6 +10,7 @@ resources:
         branches:
           include:
             - main
+            - SimpleCICD_CD
 
 pool:
   name: SelfHosted
