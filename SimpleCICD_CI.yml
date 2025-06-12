@@ -1,4 +1,4 @@
-name: SimpleCICD_CI  # Pipeline name in Azure DevOps
+name: SimpleCICD_CI
 trigger:
   branches:
     include:
@@ -7,12 +7,18 @@ trigger:
 pool:
   name: SelfHosted
   demands:
-    - Agent.Name -equals Agennt  # Self-hosted agent
+    - Agent.Name -equals Agennt
 
 steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '18.x'
+    displayName: 'Install Node.js'
+
   - script: |
-      echo "Installing Node.js..."
+      echo "Node.js version:"
       node --version
+      echo "npm version:"
       npm --version
     displayName: 'Check Node.js and npm'
 
@@ -28,7 +34,7 @@ steps:
 
   - task: PublishPipelineArtifact@1
     inputs:
-      targetPath: '$(Pipeline.Workspace)/s'  # Source directory (app root)
-      artifact: 'drop'  # Artifact name
+      targetPath: '$(Pipeline.Workspace)/s'
+      artifact: 'drop'
       publishLocation: 'pipeline'
     displayName: 'Publish Artifact'
