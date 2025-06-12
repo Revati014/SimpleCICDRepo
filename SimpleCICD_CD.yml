@@ -15,7 +15,7 @@ resources:
 pool:
   name: SelfHosted
   demands:
-    - Agent.Name -equals Agent
+    - Agent.Name -equals Agennt
 
 stages:
   - stage: Deploy
