@@ -5,7 +5,7 @@ pr: none
 resources:
   pipelines:
     - pipeline: SimpleCICD_CI
-      source:  Revati014.SimpleCICDRepo (99)  # Must match the CI pipeline namee
+      source:  Revati014.SimpleCICDRepo  # Must match the CI pipeline namee
       trigger:
         branches:
           include:
