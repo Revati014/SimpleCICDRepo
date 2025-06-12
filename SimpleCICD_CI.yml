@@ -7,7 +7,7 @@ trigger:
 pool:
   name: SelfHosted
   demands:
-    - Agent.Name -equals Agent  # Self-hosted agent
+    - Agent.Name -equals Agennt  # Self-hosted agent
 
 steps:
   - script: |
