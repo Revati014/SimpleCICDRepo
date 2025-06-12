@@ -1,0 +1,34 @@
+name: SimpleCICD_CI  # Pipeline name in Azure DevOps
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  name: SelfHosted
+  demands:
+    - Agent.Name -equals Agent  # Self-hosted agent
+
+steps:
+  - script: |
+      echo "Installing Node.js..."
+      node --version
+      npm --version
+    displayName: 'Check Node.js and npm'
+
+  - script: |
+      echo "Installing dependencies..."
+      npm install
+    displayName: 'Install Dependencies'
+
+  - script: |
+      echo "Building app..."
+      npm run test
+    displayName: 'Build and Test'
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: '$(Pipeline.Workspace)/s'  # Source directory (app root)
+      artifact: 'drop'  # Artifact name
+      publishLocation: 'pipeline'
+    displayName: 'Publish Artifact'
